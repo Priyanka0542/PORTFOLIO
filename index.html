@@ -1,684 +1,381 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Medisetty Priyanka — Full-Stack & AI Developer</title>
-  <meta name="description" content="Portfolio of Medisetty Priyanka — Full-Stack & AI Developer building scalable MERN applications and integrating LLM-powered features. CS Undergrad at VITAP University, CGPA 9.64/10." />
-  <link rel="stylesheet" href="styles.css" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Inter:wght@300;400;500;600;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Medisetty Priyanka — Full-Stack Developer &amp; AI Engineer</title>
+<meta name="description" content="Portfolio of Medisetty Priyanka — Full-Stack Developer and AI Engineer building production software that combines web engineering with applied AI/ML.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-<!-- ══════════════════════════════
-     LOADING SCREEN
-══════════════════════════════ -->
-<div id="loader">
-  <div class="loader-initials">MP</div>
-  <div class="loader-bar"><div class="loader-progress"></div></div>
-</div>
+<div class="noise-overlay" aria-hidden="true"></div>
 
-<!-- ══════════════════════════════
-     PARTICLE CANVAS
-══════════════════════════════ -->
-<div class="bg-mesh"></div>
-
-<!-- ══════════════════════════════
-     NAVBAR
-══════════════════════════════ -->
-<nav id="navbar">
-  <a href="#hero" class="nav-logo">MP_</a>
-  <ul class="nav-links">
-    <li><a href="#about">About</a></li>
-    <li><a href="#skills">Skills</a></li>
-    <li><a href="#projects">Projects</a></li>
-    <li><a href="#experience">Experience</a></li>
-    <li><a href="#education">Education</a></li>
-    <li><a href="#contact">Contact</a></li>
-  </ul>
-  <div class="nav-hamburger" id="hamburger" onclick="toggleMenu()">
-    <span></span><span></span><span></span>
+<!-- ============ NAV ============ -->
+<header class="nav" id="nav">
+  <div class="nav-inner">
+    <a href="#top" class="nav-mark">MP<span class="nav-mark-dot">.</span></a>
+    <nav class="nav-links" id="navLinks">
+      <a href="#work" data-nav>Work</a>
+      <a href="#about" data-nav>About</a>
+      <a href="#skills" data-nav>Skills</a>
+      <a href="#experience" data-nav>Experience</a>
+      <a href="#contact" data-nav class="nav-cta">Contact</a>
+    </nav>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
   </div>
-</nav>
+</header>
 
-<!-- Mobile Menu -->
-<div class="mobile-menu" id="mobile-menu">
-  <button class="mobile-close" onclick="toggleMenu()">✕</button>
-  <a href="#about"          onclick="toggleMenu()">About</a>
-  <a href="#skills"         onclick="toggleMenu()">Skills</a>
-  <a href="#projects"       onclick="toggleMenu()">Projects</a>
-  <a href="#experience"     onclick="toggleMenu()">Experience</a>
-  <a href="#education"      onclick="toggleMenu()">Education</a>
-  <a href="#contact"        onclick="toggleMenu()">Contact</a>
-</div>
+<main id="top">
 
-<!-- ══════════════════════════════
-     HERO
-══════════════════════════════ -->
-<section id="hero">
-  <div class="container">
-    <div class="hero-grid">
-
-      <!-- Left -->
-      <div>
-        <p class="hero-eyebrow fade-in">Hello, world</p>
-        <h1 class="hero-name fade-in fade-in-delay-1">Medisetty<br>Priyanka</h1>
-        <p class="hero-title fade-in fade-in-delay-2">Full-Stack & AI Developer | CS Undergrad @ VITAP University</p>
-
-        <div class="hero-typewriter fade-in fade-in-delay-2">
-          <span id="typewriter-text"></span><span class="cursor-blink"></span>
-        </div>
-
-        <p class="hero-sub fade-in fade-in-delay-3">
-          "Building scalable software with passion &amp; precision"
-        </p>
-
-        <div class="hero-ctas fade-in fade-in-delay-3">
-          <a href="#projects" class="btn btn-primary">
-            <span>View My Work</span>
-            <span>↓</span>
-          </a>
-          <a href="resume.pdf" download class="btn btn-outline">
-            <span>Download Resume</span>
-            <span>⬇</span>
-          </a>
-        </div>
-
-        <div class="hero-socials fade-in fade-in-delay-4">
-          <a href="https://github.com/Priyanka0542" target="_blank" rel="noopener" class="social-link" title="GitHub">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
-          </a>
-          <a href="https://www.linkedin.com/in/medisetty-priyanka-33363a291/" target="_blank" rel="noopener" class="social-link" title="LinkedIn">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
-          </a>
-          <a href="mailto:priyankamedisetty05@gmail.com" class="social-link" title="Email">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-          </a>
+  <!-- ============ HERO ============ -->
+  <section class="hero" id="hero">
+    <div class="hero-inner">
+      <p class="eyebrow reveal">B.TECH CSE, VIT-AP UNIVERSITY — CLASS OF 2027</p>
+      <h1 class="hero-name reveal">Medisetty Priyanka</h1>
+      <div class="role-rotator reveal" aria-label="Full-Stack Developer, AI Engineer">
+        <div class="role-track">
+          <span class="role-item">Full&#8209;Stack Developer</span>
+          <span class="role-sep">✦</span>
+          <span class="role-item">AI Engineer</span>
+          <span class="role-sep">✦</span>
+          <span class="role-item" aria-hidden="true">Full&#8209;Stack Developer</span>
+          <span class="role-sep" aria-hidden="true">✦</span>
+          <span class="role-item" aria-hidden="true">AI Engineer</span>
+          <span class="role-sep" aria-hidden="true">✦</span>
         </div>
       </div>
+      <p class="hero-sub reveal">
+        I build production software that puts AI to work on real problems — cutting the time
+        clinicians spend on call notes, surfacing health risk before symptoms do, and giving people
+        a private space to think out loud. Not notebooks. Shipped products.
+      </p>
+      <div class="hero-actions reveal">
+        <a href="#work" class="btn btn-primary">View Work</a>
+        <a href="mailto:priyankamedisetty05@gmail.com" class="btn btn-ghost">Get in Touch</a>
+      </div>
+      <div class="hero-links reveal">
+        <a href="https://github.com/Priyanka0542" target="_blank" rel="noopener" aria-label="GitHub">
+          <svg viewBox="0 0 24 24" width="20" height="20"><path fill="currentColor" d="M12 2C6.48 2 2 6.58 2 12.25c0 4.53 2.87 8.37 6.84 9.73.5.1.68-.22.68-.49 0-.24-.01-1.04-.01-1.89-2.78.62-3.37-1.22-3.37-1.22-.46-1.2-1.11-1.52-1.11-1.52-.91-.64.07-.63.07-.63 1 .07 1.53 1.05 1.53 1.05.89 1.56 2.34 1.11 2.91.85.09-.65.35-1.11.63-1.36-2.22-.26-4.56-1.14-4.56-5.06 0-1.12.39-2.03 1.03-2.75-.1-.26-.45-1.31.1-2.72 0 0 .84-.27 2.75 1.05a9.3 9.3 0 0 1 5 0c1.91-1.32 2.75-1.05 2.75-1.05.55 1.41.2 2.46.1 2.72.64.72 1.03 1.63 1.03 2.75 0 3.93-2.35 4.8-4.58 5.05.36.32.68.94.68 1.9 0 1.37-.01 2.48-.01 2.82 0 .27.18.6.69.49A10.02 10.02 0 0 0 22 12.25C22 6.58 17.52 2 12 2Z"/></svg>
+        </a>
+        <a href="https://www.linkedin.com/in/medisetty-priyanka-33363a291/" target="_blank" rel="noopener" aria-label="LinkedIn">
+          <svg viewBox="0 0 24 24" width="20" height="20"><path fill="currentColor" d="M4.98 3.5C4.98 4.6 4.1 5.5 3 5.5S1 4.6 1 3.5 1.9 1.5 3 1.5s1.98.9 1.98 2ZM1.5 8.24h3v13.02h-3V8.24ZM8.5 8.24h2.88v1.78h.04c.4-.76 1.4-1.78 3.03-1.78 3.24 0 3.84 2.13 3.84 4.9v7.36h-3v-6.53c0-1.56-.03-3.56-2.17-3.56-2.17 0-2.5 1.7-2.5 3.45v6.64h-3V8.24Z"/></svg>
+        </a>
+        <a href="mailto:priyankamedisetty05@gmail.com" aria-label="Email">
+          <svg viewBox="0 0 24 24" width="20" height="20"><path fill="currentColor" d="M2 5.5A1.5 1.5 0 0 1 3.5 4h17A1.5 1.5 0 0 1 22 5.5v13a1.5 1.5 0 0 1-1.5 1.5h-17A1.5 1.5 0 0 1 2 18.5v-13Zm2.2.5 7.8 6.2 7.8-6.2H4.2ZM20 7.4l-7.4 5.9a1 1 0 0 1-1.2 0L4 7.4v11.1h16V7.4Z"/></svg>
+        </a>
+      </div>
+    </div>
 
-      <!-- Right: Visual Orb -->
-      <div class="hero-visual fade-in fade-in-delay-2">
-        <div class="hero-orb-container">
-          <div class="hero-orb">
-            <div class="orb-code">
-              <span class="kw">const</span> dev = {<br>
-              &nbsp;&nbsp;name: <span class="str">"Priyanka"</span>,<br>
-              &nbsp;&nbsp;stack: <span class="str">"MERN + AI"</span>,<br>
-              &nbsp;&nbsp;cgpa: <span class="fn">9.64</span>,<br>
-              &nbsp;&nbsp;ai: <span class="str">"LLM + ML"</span>,<br>
-              &nbsp;&nbsp;open: <span class="fn">true</span><br>
-              };
+    <div class="hero-signal" aria-hidden="true">
+      <svg id="pulseSvg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+        <path id="pulsePath" d="M0,60 L140,60 L165,60 L180,20 L200,100 L220,60 L240,60 L1200,60"
+          fill="none" stroke="currentColor" stroke-width="2"/>
+      </svg>
+    </div>
+
+    <div class="stat-strip reveal">
+      <div class="stat"><span class="stat-num">9.64</span><span class="stat-label">CGPA / 10</span></div>
+      <div class="stat-div"></div>
+      <div class="stat"><span class="stat-num">4</span><span class="stat-label">Full-stack products shipped</span></div>
+      <div class="stat-div"></div>
+      <div class="stat"><span class="stat-num">3</span><span class="stat-label">AI/ML pipelines in production</span></div>
+      <div class="stat-div"></div>
+      <div class="stat"><span class="stat-num">2027</span><span class="stat-label">Graduating, open to roles</span></div>
+    </div>
+  </section>
+
+  <div class="section-divider" aria-hidden="true">
+    <svg viewBox="0 0 1200 40" preserveAspectRatio="none"><path d="M0,20 L560,20 L575,5 L590,35 L605,20 L1200,20" fill="none" stroke="currentColor" stroke-width="1.5"/></svg>
+  </div>
+
+  <!-- ============ ABOUT ============ -->
+  <section class="about" id="about">
+    <div class="section-inner about-grid">
+      <div class="section-head">
+        <p class="eyebrow">01 — ABOUT</p>
+        <h2>I work end to end, on purpose.</h2>
+      </div>
+      <div class="about-copy">
+        <p>
+          I'm a Computer Science undergraduate at VIT-AP University, and most of what I build sits at
+          the join between a web application and a model that's actually doing something useful inside it.
+          React and Node on the frontend and API layer, Python and Scikit-Learn on the modeling side —
+          and I'm just as comfortable wiring a Groq-hosted LLM into a product as I am training a
+          classifier on a clinical dataset and taking it through cross-validation.
+        </p>
+        <p>
+          What I care about is the part most ML coursework skips: getting the model out of the notebook
+          and in front of someone who needs it — through a real API, a real interface, and a deployment
+          that holds up. Three of my last four projects went from idea to a live, publicly reachable product.
+        </p>
+        <div class="about-tags">
+          <span class="pill">Full-Stack (MERN)</span>
+          <span class="pill">Applied ML</span>
+          <span class="pill">LLM Integration</span>
+          <span class="pill">Offline-First AI</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ WORK ============ -->
+  <section class="work" id="work">
+    <div class="section-inner">
+      <div class="section-head">
+        <p class="eyebrow">02 — SELECTED WORK</p>
+        <h2>Four builds, four different problems.</h2>
+        <p class="section-sub">Each one pairs a working full-stack application with an AI or ML system doing real work inside it — not a demo layer on top.</p>
+      </div>
+
+      <div class="project-list">
+
+        <!-- TearBag -->
+        <article class="project reveal">
+          <div class="project-meta">
+            <span class="status status-live">● Live</span>
+            <h3>TearBag</h3>
+            <p class="project-tagline">The Emotional Vault</p>
+            <div class="project-links">
+              <a href="https://tearbag.vercel.app" target="_blank" rel="noopener">Live site ↗</a>
+              <a href="https://github.com/Priyanka0542/TEARBAG" target="_blank" rel="noopener">Source ↗</a>
             </div>
           </div>
-          <div class="float-tag">Node.js ðŸŸ¢</div>
-          <div class="float-tag">MongoDB ðŸƒ</div>
-          <div class="float-tag">React âš›ï¸</div>
-          <div class="float-tag">Groq AI ⚡</div>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<!-- ══════════════════════════════
-     ABOUT
-══════════════════════════════ -->
-<section id="about">
-  <div class="container">
-    <div class="about-grid">
-
-      <div>
-        <p class="section-tag fade-in">01 / About Me</p>
-        <h2 class="section-title fade-in fade-in-delay-1">Who I <span class="gradient-text">Am</span></h2>
-
-        <p class="about-bio fade-in fade-in-delay-2">
-          Computer Science student at <strong>VITAP University</strong> with a CGPA of <strong>9.64/10</strong>,
-          driven by a simple belief: <strong>technology should make people's lives better</strong>. Every project I build
-          starts with a real problem — whether it's helping patients get faster clinical summaries, predicting health risks,
-          or giving people a private space to process their emotions.
-        </p>
-        <p class="about-bio fade-in fade-in-delay-2">
-          I build <strong>full-stack MERN applications</strong>, integrate <strong>AI/ML models</strong> with production APIs,
-          and leverage <strong>LLMs</strong> to ship intelligent software. Currently preparing for
-          <strong>campus placements</strong> while sharpening competitive programming skills.
-        </p>
-
-        <div class="quick-facts fade-in fade-in-delay-3">
-          <div class="fact-card">
-            <span class="fact-icon">📍</span>
-            <div class="fact-text"><strong>Location</strong>Guntur, AP</div>
-          </div>
-          <div class="fact-card">
-            <span class="fact-icon">🎓</span>
-            <div class="fact-text"><strong>Degree</strong>B.Tech CSE, 2023–2027</div>
-          </div>
-          <div class="fact-card">
-            <span class="fact-icon">⚡</span>
-            <div class="fact-text"><strong>CGPA</strong>9.64 / 10</div>
-          </div>
-          <div class="fact-card">
-            <span class="fact-icon">🤖</span>
-            <div class="fact-text"><strong>Focus</strong>Full Stack + ML</div>
-          </div>
-        </div>
-      </div>
-
-      <div class="about-visual fade-in fade-in-delay-2">
-        <div class="stat-card">
-          <div class="stat-number">9.64</div>
-          <div class="stat-label">CGPA out of 10</div>
-        </div>
-        <div class="stat-card">
-          <div class="stat-number">5+</div>
-          <div class="stat-label">Projects Built</div>
-        </div>
-        
-        <div class="stat-card">
-          <div class="stat-number">âˆž</div>
-          <div class="stat-label">Passion for Code</div>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<!-- ══════════════════════════════
-     SKILLS
-══════════════════════════════ -->
-<section id="skills">
-  <div class="container">
-    <p class="section-tag fade-in">02 / Skills</p>
-    <h2 class="section-title fade-in fade-in-delay-1">Tech <span class="gradient-text">Stack</span></h2>
-    <p class="fade-in fade-in-delay-2" style="color:var(--muted);font-size:1rem;max-width:560px;line-height:1.7;margin-bottom:0">
-      Spanning web development and machine learning — tools and frameworks I use to ship production-ready software.
-    </p>
-
-    <div class="skills-grid">
-
-      <div class="skill-category fade-in fade-in-delay-1">
-        <div class="skill-cat-title">Languages</div>
-        <div class="skill-pills">
-          <span class="pill">Java</span>
-          <span class="pill">Python</span>
-          <span class="pill">JavaScript</span>
-          <span class="pill">TypeScript</span>
-          <span class="pill">C++</span>
-          <span class="pill">C</span>
-        </div>
-      </div>
-
-      <div class="skill-category fade-in fade-in-delay-2">
-        <div class="skill-cat-title">Frontend</div>
-        <div class="skill-pills">
-          <span class="pill">React</span>
-          <span class="pill">HTML5</span>
-          <span class="pill">CSS3</span>
-          <span class="pill">Tailwind CSS</span>
-          <span class="pill">Bootstrap</span>
-          <span class="pill">Vite</span>
-        </div>
-      </div>
-
-      <div class="skill-category fade-in fade-in-delay-3">
-        <div class="skill-cat-title">Backend &amp; Databases</div>
-        <div class="skill-pills">
-          <span class="pill">Node.js</span>
-          <span class="pill">Express.js</span>
-          <span class="pill">Flask</span>
-          <span class="pill">REST APIs</span>
-          <span class="pill">MongoDB</span>
-          <span class="pill">SQL</span>
-        </div>
-      </div>
-
-      <div class="skill-category fade-in fade-in-delay-2">
-        <div class="skill-cat-title">AI / ML</div>
-        <div class="skill-pills">
-          <span class="pill">Scikit-learn</span>
-          <span class="pill">Groq SDK</span>
-          <span class="pill">Llama-3</span>
-          <span class="pill">Data Preprocessing</span>
-          <span class="pill">Model Evaluation</span>
-        </div>
-      </div>
-
-      <div class="skill-category fade-in fade-in-delay-3">
-        <div class="skill-cat-title">Tools &amp; Concepts</div>
-        <div class="skill-pills">
-          <span class="pill">Git</span>
-          <span class="pill">GitHub</span>
-          <span class="pill">VS Code</span>
-          <span class="pill">Vercel</span>
-          <span class="pill">Render</span>
-          <span class="pill">DSA</span>
-          <span class="pill">OOP</span>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<!-- ══════════════════════════════
-     PROJECTS
-══════════════════════════════ -->
-<section id="projects">
-  <div class="container">
-    <p class="section-tag fade-in">03 / Projects</p>
-    <h2 class="section-title fade-in fade-in-delay-1">Featured <span class="gradient-text">Work</span></h2>
-    <p class="fade-in fade-in-delay-2" style="color:var(--muted);font-size:1rem;max-width:560px;line-height:1.7;margin-bottom:0">
-      Every project starts with a real problem — from healthcare to emotional wellness. Built with precision and purpose.
-    </p>
-
-    <div class="projects-grid">
-
-      <!-- TearBag -->
-      <div class="project-card featured fade-in fade-in-delay-1">
-        <div class="project-header">
-          <div class="project-icon">ðŸ’§</div>
-          <div class="project-links">
-            <a href="https://github.com/Priyanka0542/TEARBAG" target="_blank" rel="noopener" class="project-link" title="GitHub"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg></a>
-          </div>
-        </div>
-        <div class="project-name">TearBag — The Emotional Vault</div>
-        <div class="project-period">July 2026</div>
-        <div class="project-desc">
-          Architected a full-stack MERN wellness platform featuring secure time-capsule journaling and a gamified
-          3D Gratitude Garden. Integrated Meta's Llama 3 via the Groq SDK for real-time AI companionship.
-        </div>
-        <div class="project-tags">
-          <span class="tag">React</span><span class="tag">Node.js</span><span class="tag">MongoDB</span>
-          <span class="tag">Tailwind CSS</span><span class="tag">Groq / Llama-3</span>
-        </div>
-      </div>
-
-      <!-- CareCo -->
-      <div class="project-card fade-in fade-in-delay-2">
-        <div class="project-header">
-          <div class="project-icon">ðŸ¥</div>
-          <div class="project-links">
-            <a href="https://github.com/Priyanka0542/CAREMYMED" target="_blank" rel="noopener" class="project-link" title="GitHub"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg></a>
-          </div>
-        </div>
-        <div class="project-name">CareCo — Clinical Call Summarizer</div>
-        <div class="project-period">2026</div>
-        <div class="project-desc">
-          An offline, zero-cost healthcare microservice that transcribes patient calls and generates structured
-          clinical summaries using locally hosted Whisper and Ollama (Meditron:7b).
-        </div>
-        <div class="project-tags">
-          <span class="tag">Python</span><span class="tag">Whisper</span><span class="tag">Ollama</span>
-          <span class="tag">Flask</span><span class="tag">Healthcare</span>
-        </div>
-      </div>
-
-      <!-- MEDISENSE -->
-      <div class="project-card fade-in fade-in-delay-3">
-        <div class="project-header">
-          <div class="project-icon">ðŸ§ </div>
-          <div class="project-links">
-            <a href="https://github.com/Priyanka0542/MEDISENSE" target="_blank" rel="noopener" class="project-link" title="GitHub"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg></a>
-          </div>
-        </div>
-        <div class="project-name">MEDISENSE — ML Disease Prediction</div>
-        <div class="project-period">Feb 2026</div>
-        <div class="project-desc">
-          Trained Scikit-learn classification models on healthcare datasets. Integrated Flask REST APIs with a
-          React frontend for real-time disease prediction and result visualization.
-        </div>
-        <div class="project-tags">
-          <span class="tag">Python</span><span class="tag">Scikit-learn</span><span class="tag">Flask</span>
-          <span class="tag">React</span><span class="tag">REST API</span>
-        </div>
-      </div>
-
-      <!-- HR-MDPS -->
-      <div class="project-card fade-in fade-in-delay-1">
-        <div class="project-header">
-          <div class="project-icon">ðŸ«€</div>
-          <div class="project-links">
-            <a href="https://github.com/Priyanka0542/ML-BASED-DIABETES-PREDICTOR" target="_blank" rel="noopener" class="project-link" title="GitHub"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg></a>
-          </div>
-        </div>
-        <div class="project-name">HR-MDPS — Health Risk Predictor</div>
-        <div class="project-period">Jan 2026</div>
-        <div class="project-desc">
-          AI-powered application predicting heart disease and diabetes risk using Gradient Boosting, Random Forest,
-          and SVM models. Documented as a formal IEEE-format research paper.
-        </div>
-        <div class="project-tags">
-          <span class="tag">Python</span><span class="tag">Scikit-learn</span>
-          <span class="tag">ML</span><span class="tag">IEEE Research</span>
-        </div>
-      </div>
-
-      <!-- EchoHeir -->
-      <div class="project-card fade-in fade-in-delay-2">
-        <div class="project-header">
-          <div class="project-icon">ðŸ“¸</div>
-          <div class="project-links">
-            <a href="https://github.com/Priyanka0542/Echoheir" target="_blank" rel="noopener" class="project-link" title="GitHub"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg></a>
-          </div>
-        </div>
-        <div class="project-name">EchoHeir — Digital Legacy Platform</div>
-        <div class="project-period">Sep 2025</div>
-        <div class="project-desc">
-          Full-stack platform for preserving digital memories with conversational AI interaction.
-          Built with React/Vite and Node.js using reusable component architecture.
-        </div>
-        <div class="project-tags">
-          <span class="tag">React</span><span class="tag">Node.js</span>
-          <span class="tag">JavaScript</span><span class="tag">AI</span>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<!-- GitHub Activity -->
-<section id="github-activity">
-  <div class="container">
-    <p class="section-tag fade-in">04 / Open Source</p>
-    <h2 class="section-title fade-in fade-in-delay-1">GitHub <span class="gradient-text">Activity</span></h2>
-
-    <div class="github-chart-container fade-in fade-in-delay-2">
-      <img src="https://ghchart.rshah.org/00e5ff/Priyanka0542" alt="Priyanka0542's GitHub Contribution Chart" loading="lazy" />
-    </div>
-
-    <div class="github-stats fade-in fade-in-delay-3">
-      <div class="github-stat-badge">
-        <div class="github-stat-number">11+</div>
-        <div class="github-stat-label">Repositories</div>
-      </div>
-      <div class="github-stat-badge">
-        <div class="github-stat-number">5</div>
-        <div class="github-stat-label">Impact Projects</div>
-      </div>
-      <div class="github-stat-badge">
-        <div class="github-stat-number">3</div>
-        <div class="github-stat-label">Tech Domains</div>
-      </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ════════════════════════════════════════════════════════════ 
-     EXPERIENCE
-════════════════════════════════════════════════════════════  -->
-<section id="experience">
-  <div class="container">
-    <p class="section-tag fade-in">05 / Experience</p>
-    <h2 class="section-title fade-in fade-in-delay-1">Work <span class="gradient-text">Experience</span></h2>
-
-    <div class="timeline">
-      <div class="timeline-item fade-in fade-in-delay-2">
-        <div class="timeline-dot"></div>
-        <div class="experience-card">
-          <div class="exp-header">
-            <div>
-              <div class="exp-company">SkillCraft Technology</div>
-              <div class="exp-meta">📍 Remote &nbsp;|&nbsp; 🗓 June 2025</div>
+          <div class="project-body">
+            <p><span class="field-label">Problem —</span> Most journaling apps are notes apps with a mood emoji bolted on: no real privacy model, and nothing that responds back.</p>
+            <p><span class="field-label">Build —</span> A full MERN application with JWT auth and time-locked "capsule" entries that stay masked server-side until their unlock date. Layered a Groq-hosted Llama-3 companion on top that reads each entry's emotional tone and replies in character, plus a Gratitude Garden that turns journaling streaks into a growing tree.</p>
+            <p><span class="field-label">Result —</span> Live in production across Vercel, Render, and MongoDB Atlas, with a glassmorphism UI and Framer Motion micro-interactions that hold up on mobile.</p>
+            <div class="tag-row">
+              <span class="tag">React 18</span><span class="tag">TypeScript</span><span class="tag">Node/Express</span>
+              <span class="tag">MongoDB</span><span class="tag">Tailwind CSS</span><span class="tag">Groq · Llama-3</span>
+              <span class="tag">Framer Motion</span>
             </div>
-            <span class="exp-role">Web Dev Intern</span>
           </div>
-          <ul class="exp-bullets">
-            <li>Built reusable React components and implemented dynamic UI features across multiple tasks.</li>
-            <li>Developed a task management web application with full CRUD functionality.</li>
-            <li>Designed responsive interfaces and followed component-based architecture throughout.</li>
+        </article>
+
+        <!-- CareCall -->
+        <article class="project reveal">
+          <div class="project-meta">
+            <span class="status status-ship">● Offline-first</span>
+            <h3>CareCall</h3>
+            <p class="project-tagline">Medical Call Audio Summarizer</p>
+            <div class="project-links">
+              <a href="https://github.com/Priyanka0542/CAREMYMED" target="_blank" rel="noopener">Source ↗</a>
+            </div>
+          </div>
+          <div class="project-body">
+            <p><span class="field-label">Problem —</span> Clinical staff lose real hours transcribing and summarizing patient calls, and most AI transcription tools require sending that audio to a third-party API — a non-starter with patient data.</p>
+            <p><span class="field-label">Build —</span> A fully offline FastAPI microservice: faster-whisper for multilingual transcription across six languages, a locally hosted Mistral 7B via Ollama for structured summaries, and RapidFuzz matching against a 225K-entry medicine dataset to flag prescriptions mentioned on the call. Async job queue with polling, results stored in SQLite.</p>
+            <p><span class="field-label">Result —</span> Zero API cost and zero patient data leaving the machine — built for teams that can't compromise on privacy.</p>
+            <div class="tag-row">
+              <span class="tag">Python</span><span class="tag">FastAPI</span><span class="tag">faster-whisper</span>
+              <span class="tag">Ollama · Mistral 7B</span><span class="tag">RapidFuzz</span><span class="tag">SQLite</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- MediSense -->
+        <article class="project reveal">
+          <div class="project-meta">
+            <span class="status status-ship">● Shipped</span>
+            <h3>MediSense AI</h3>
+            <p class="project-tagline">Multi-Disease Risk Prediction Platform</p>
+            <div class="project-links">
+              <a href="https://github.com/Priyanka0542/MEDISENSE" target="_blank" rel="noopener">Source ↗</a>
+            </div>
+          </div>
+          <div class="project-body">
+            <p><span class="field-label">Problem —</span> Early risk signals for conditions like heart disease and diabetes sit unused in clinical datasets — most people never see a risk estimate until symptoms are already serious.</p>
+            <p><span class="field-label">Build —</span> Trained four separate classifiers — heart disease, diabetes, chronic kidney disease, and Parkinson's — on real clinical datasets (UCI Cleveland, PIMA Indian, UCI CKD, UCI Oxford voice) through a full pipeline: EDA, preprocessing, feature engineering, stratified train/test split, 5-fold cross-validation, and evaluation on accuracy, AUC, and F1. Served through a Flask REST API to a React 18 frontend with a dedicated page per condition and an offline fallback engine.</p>
+            <p><span class="field-label">Result —</span> Wrote up the risk-prediction pipeline as an IEEE-format research paper alongside the shipped product.</p>
+            <div class="tag-row">
+              <span class="tag">Python</span><span class="tag">Scikit-Learn</span><span class="tag">Flask</span>
+              <span class="tag">React</span><span class="tag">Pandas</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Echoheir -->
+        <article class="project reveal">
+          <div class="project-meta">
+            <span class="status status-ship">● Shipped</span>
+            <h3>Echoheir</h3>
+            <p class="project-tagline">AI Digital Legacy Platform</p>
+            <div class="project-links">
+              <a href="https://github.com/Priyanka0542/Echoheir" target="_blank" rel="noopener">Source ↗</a>
+            </div>
+          </div>
+          <div class="project-body">
+            <p><span class="field-label">Problem —</span> The messages and memories people want to preserve for family are scattered across chat exports and photo albums, with no real way to revisit them.</p>
+            <p><span class="field-label">Build —</span> Built the React frontend for a digital-legacy platform designed around conversational interaction with preserved memories — so entries can be revisited, not just archived. Focused on a reusable component architecture across the memory feed, entry composer, and companion views.</p>
+            <p><span class="field-label">Result —</span> Deployed on Vercel; the component patterns here fed directly into how TearBag's frontend was structured.</p>
+            <div class="tag-row">
+              <span class="tag">React</span><span class="tag">JavaScript</span><span class="tag">HTML5</span><span class="tag">CSS3</span>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <div class="section-divider" aria-hidden="true">
+    <svg viewBox="0 0 1200 40" preserveAspectRatio="none"><path d="M0,20 L560,20 L575,5 L590,35 L605,20 L1200,20" fill="none" stroke="currentColor" stroke-width="1.5"/></svg>
+  </div>
+
+  <!-- ============ SKILLS ============ -->
+  <section class="skills" id="skills">
+    <div class="section-inner">
+      <div class="section-head">
+        <p class="eyebrow">03 — SKILLS</p>
+        <h2>The stack, by layer.</h2>
+      </div>
+      <div class="skills-grid">
+        <div class="skill-group">
+          <h4>Languages</h4>
+          <div class="tag-row"><span class="tag">Java</span><span class="tag">Python</span><span class="tag">C++</span><span class="tag">JavaScript</span><span class="tag">TypeScript</span></div>
+        </div>
+        <div class="skill-group">
+          <h4>Frontend</h4>
+          <div class="tag-row"><span class="tag">React.js</span><span class="tag">HTML5</span><span class="tag">CSS3</span><span class="tag">Tailwind CSS</span><span class="tag">Bootstrap</span><span class="tag">Framer Motion</span></div>
+        </div>
+        <div class="skill-group">
+          <h4>Backend &amp; APIs</h4>
+          <div class="tag-row"><span class="tag">Node.js</span><span class="tag">Express.js</span><span class="tag">Flask</span><span class="tag">FastAPI</span><span class="tag">REST APIs</span></div>
+        </div>
+        <div class="skill-group">
+          <h4>AI / ML</h4>
+          <div class="tag-row"><span class="tag">Scikit-Learn</span><span class="tag">Groq / Llama-3</span><span class="tag">Ollama</span><span class="tag">Whisper</span><span class="tag">Model Evaluation</span></div>
+        </div>
+        <div class="skill-group">
+          <h4>Data</h4>
+          <div class="tag-row"><span class="tag">MongoDB</span><span class="tag">SQL</span><span class="tag">SQLite</span></div>
+        </div>
+        <div class="skill-group">
+          <h4>Tools</h4>
+          <div class="tag-row"><span class="tag">Git</span><span class="tag">GitHub</span><span class="tag">VS Code</span><span class="tag">Vercel</span><span class="tag">Render</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ EXPERIENCE + EDUCATION ============ -->
+  <section class="experience" id="experience">
+    <div class="section-inner exp-grid">
+      <div>
+        <p class="eyebrow">04 — EXPERIENCE</p>
+        <div class="exp-item">
+          <div class="exp-top">
+            <h3>Web Development Intern</h3>
+            <span class="exp-date">June 2025</span>
+          </div>
+          <p class="exp-company">SkillCraft Technology — Remote</p>
+          <ul>
+            <li>Developed reusable React components and responsive interfaces following modern frontend practices.</li>
+            <li>Built a task management application with full CRUD operations and REST API integration.</li>
+            <li>Improved code maintainability through component-based architecture and Git-based version control.</li>
           </ul>
         </div>
       </div>
-    </div>
-  </div>
-</section>
-
-══════════════════════════════ -->
-<section id="education">
-  <div class="container">
-    <p class="section-tag fade-in">06 / Education</p>
-    <h2 class="section-title fade-in fade-in-delay-1">Academic <span class="gradient-text">Journey</span></h2>
-
-    <div class="edu-timeline">
-
-      <div class="edu-item fade-in fade-in-delay-1">
-        <div class="edu-card">
-          <div class="edu-institution">VITAP University</div>
-          <div class="edu-degree">B.Tech — Computer Science &amp; Engineering</div>
-          <div class="edu-meta">
-            <span class="edu-period">Sep 2023 – Sep 2027</span>
-            <span class="edu-grade">⚡ CGPA: 9.64 / 10</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="edu-item fade-in fade-in-delay-2">
-        <div class="edu-card">
-          <div class="edu-institution">NRI Sai Junior College</div>
-          <div class="edu-degree">Intermediate — MPC Stream</div>
-          <div class="edu-meta">
-            <span class="edu-period">March 2023</span>
-            <span class="edu-grade">🏆 98.4%</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="edu-item fade-in fade-in-delay-3">
-        <div class="edu-card">
-          <div class="edu-institution">Montessori English Medium School</div>
-          <div class="edu-degree">Class 10 — SSC</div>
-          <div class="edu-meta">
-            <span class="edu-period">May 2021</span>
-            <span class="edu-grade">🥇 10 / 10 GPA</span>
-          </div>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<!-- ═ ═ ═ ═ ═ ═ ═ ═ ═ ═ ═ ═ ═ ═ ═ ═ ═ ═ ═ ═ ═ ═ ═ ═ ═ ═ ═ ═ ═ ═ 
-     CONTACT
-═ ═ ═ ═ ═ ═ ═ ═ ═ ═ ═ ═ ═ ═ ═ ═ ═ ═ ═ ═ ═ ═ ═ ═ ═ ═ ═ ═ ═ ═  -->
-<section id="contact">
-  <div class="container">
-    <div class="contact-grid">
-
       <div>
-        <p class="section-tag fade-in">07 / Contact</p>
-        <h2 class="contact-heading fade-in fade-in-delay-1">
-          Let's Build Something<br><span class="gradient-text">Together</span>
-        </h2>
-        <p class="contact-sub fade-in fade-in-delay-2">
-          Whether you have a project in mind, an internship opportunity, or just want to say hello —
-          my inbox is always open. I'll get back to you as soon as possible!
-        </p>
-
-        <div class="contact-info fade-in fade-in-delay-3">
-          <a href="mailto:priyankamedisetty05@gmail.com" class="contact-info-card">
-            <div class="contact-info-icon">✉️ </div>
-            <div class="contact-info-text">
-              <strong>Email</strong>
-              priyankamedisetty05@gmail.com
-            </div>
-          </a>
-
-          <a href="https://github.com/Priyanka0542" target="_blank" rel="noopener" class="contact-info-card">
-            <div class="contact-info-icon">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="color:var(--cyan)"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
-            </div>
-            <div class="contact-info-text">
-              <strong>GitHub</strong>
-              github.com/Priyanka0542
-            </div>
-          </a>
-
-          <a href="https://www.linkedin.com/in/medisetty-priyanka-33363a291/" target="_blank" rel="noopener" class="contact-info-card">
-            <div class="contact-info-icon">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="color:var(--cyan)"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
-            </div>
-            <div class="contact-info-text">
-              <strong>LinkedIn</strong>
-              medisetty-priyanka-33363a291
-            </div>
-          </a>
-
-          <div class="contact-info-card" style="cursor:default">
-            <div class="contact-info-icon">ðŸ“ž</div>
-            <div class="contact-info-text">
-              <strong>Phone</strong>
-              +91 63036 24041
-            </div>
+        <p class="eyebrow">05 — EDUCATION</p>
+        <div class="exp-item">
+          <div class="exp-top">
+            <h3>B.Tech, Computer Science Engineering</h3>
+            <span class="exp-date">2023 – 2027</span>
           </div>
+          <p class="exp-company">VIT-AP University, Amaravati</p>
+          <p class="exp-note">CGPA: 9.64 / 10</p>
+        </div>
+        <div class="exp-item">
+          <div class="exp-top">
+            <h3>Intermediate (MPC)</h3>
+            <span class="exp-date">2021 – 2023</span>
+          </div>
+          <p class="exp-company">NRI Sai Junior College, Guntur</p>
+          <p class="exp-note">Percentage: 98.4%</p>
         </div>
       </div>
-
-      <!-- Form -->
-      <div class="fade-in fade-in-delay-2">
-        <div class="contact-form">
-          <form id="contact-form" onsubmit="handleFormSubmit(event)">
-            <div class="form-group">
-              <label class="form-label" for="name">Your Name</label>
-              <input type="text" id="name" class="form-input" placeholder="John Doe" required />
-            </div>
-            <div class="form-group">
-              <label class="form-label" for="email">Email Address</label>
-              <input type="email" id="email" class="form-input" placeholder="john@example.com" required />
-            </div>
-            <div class="form-group">
-              <label class="form-label" for="message">Message</label>
-              <textarea id="message" class="form-input" rows="5" placeholder="Let's collaborate on something amazing”¦" required></textarea>
-            </div>
-            <button type="submit" class="btn-submit" id="submit-btn">Send Message âœˆ</button>
-          </form>
-        </div>
-      </div>
-
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- ═ ═ ═ ═ ═ ═ ═ ═ ═ ═ ═ ═ ═ ═ ═ ═ ═ ═ ═ ═ ═ ═ ═ ═ ═ ═ ═ ═ ═ ═ 
-     FOOTER
-═ ═ ═ ═ ═ ═ ═ ═ ═ ═ ═ ═ ═ ═ ═ ═ ═ ═ ═ ═ ═ ═ ═ ═ ═ ═ ═ ═ ═ ═  -->
-<footer>
-  <div class="container">
-    <div class="footer-inner">
-      <p class="footer-copy">Designed &amp; Built by <span>Medisetty Priyanka</span> © 2026</p>
-
-      <div class="footer-socials">
-        <a href="https://github.com/Priyanka0542" target="_blank" rel="noopener" class="social-link" title="GitHub">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
+  <!-- ============ CONTACT ============ -->
+  <section class="contact" id="contact">
+    <div class="section-inner contact-inner">
+      <p class="eyebrow">06 — CONTACT</p>
+      <h2>Building something worth a conversation?</h2>
+      <p class="contact-sub">I'm graduating in 2027 and actively looking for full-stack and AI engineering roles and internships. Reach out directly — I read everything myself.</p>
+      <div class="contact-actions">
+        <a href="mailto:priyankamedisetty05@gmail.com" class="btn btn-primary">priyankamedisetty05@gmail.com</a>
+      </div>
+      <div class="hero-links contact-links">
+        <a href="https://github.com/Priyanka0542" target="_blank" rel="noopener" aria-label="GitHub">
+          <svg viewBox="0 0 24 24" width="20" height="20"><path fill="currentColor" d="M12 2C6.48 2 2 6.58 2 12.25c0 4.53 2.87 8.37 6.84 9.73.5.1.68-.22.68-.49 0-.24-.01-1.04-.01-1.89-2.78.62-3.37-1.22-3.37-1.22-.46-1.2-1.11-1.52-1.11-1.52-.91-.64.07-.63.07-.63 1 .07 1.53 1.05 1.53 1.05.89 1.56 2.34 1.11 2.91.85.09-.65.35-1.11.63-1.36-2.22-.26-4.56-1.14-4.56-5.06 0-1.12.39-2.03 1.03-2.75-.1-.26-.45-1.31.1-2.72 0 0 .84-.27 2.75 1.05a9.3 9.3 0 0 1 5 0c1.91-1.32 2.75-1.05 2.75-1.05.55 1.41.2 2.46.1 2.72.64.72 1.03 1.63 1.03 2.75 0 3.93-2.35 4.8-4.58 5.05.36.32.68.94.68 1.9 0 1.37-.01 2.48-.01 2.82 0 .27.18.6.69.49A10.02 10.02 0 0 0 22 12.25C22 6.58 17.52 2 12 2Z"/></svg>
         </a>
-        <a href="https://www.linkedin.com/in/medisetty-priyanka-33363a291/" target="_blank" rel="noopener" class="social-link" title="LinkedIn">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
-        </a>
-        <a href="mailto:priyankamedisetty05@gmail.com" class="social-link" title="Email">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        <a href="https://www.linkedin.com/in/medisetty-priyanka-33363a291/" target="_blank" rel="noopener" aria-label="LinkedIn">
+          <svg viewBox="0 0 24 24" width="20" height="20"><path fill="currentColor" d="M4.98 3.5C4.98 4.6 4.1 5.5 3 5.5S1 4.6 1 3.5 1.9 1.5 3 1.5s1.98.9 1.98 2ZM1.5 8.24h3v13.02h-3V8.24ZM8.5 8.24h2.88v1.78h.04c.4-.76 1.4-1.78 3.03-1.78 3.24 0 3.84 2.13 3.84 4.9v7.36h-3v-6.53c0-1.56-.03-3.56-2.17-3.56-2.17 0-2.5 1.7-2.5 3.45v6.64h-3V8.24Z"/></svg>
         </a>
       </div>
-
-      <a href="#hero" class="back-top" title="Back to top">â†‘</a>
     </div>
-  </div>
-</footer>
+  </section>
 
-<!-- ══════════════════════════════
-     JAVASCRIPT
-══════════════════════════════ -->
+  <footer class="footer">
+    <div class="section-inner footer-inner">
+      <span>© 2026 Medisetty Priyanka</span>
+    </div>
+  </footer>
+
+</main>
+
 <script>
-/* â”€â”€ Loader â”€â”€ */
-window.addEventListener('load', () => {
-  setTimeout(() => {
-    document.getElementById('loader').classList.add('hidden');
-    document.querySelectorAll('.fade-in').forEach(el => {
-      if (isInViewport(el)) el.classList.add('visible');
-    });
-  }, 1600);
+// Mobile nav toggle
+const navToggle = document.getElementById('navToggle');
+const navLinks = document.getElementById('navLinks');
+
+navToggle.addEventListener('click', () => {
+  const isOpen = navLinks.classList.toggle('is-open');
+  navToggle.setAttribute('aria-expanded', isOpen);
 });
 
-
-
-/* â”€â”€ Typewriter — updated to include ML â”€â”€ */
-const words  = ['Full-Stack Developer', 'AI/ML Engineer', 'MERN Stack Developer', 'Problem Solver'];
-let wordIdx  = 0, charIdx = 0, deleting = false;
-const typEl  = document.getElementById('typewriter-text');
-
-function typeWriter() {
-  const word = words[wordIdx];
-  if (!deleting) {
-    typEl.textContent = word.substring(0, charIdx + 1);
-    charIdx++;
-    if (charIdx === word.length) { deleting = true; setTimeout(typeWriter, 1800); return; }
-  } else {
-    typEl.textContent = word.substring(0, charIdx - 1);
-    charIdx--;
-    if (charIdx === 0) { deleting = false; wordIdx = (wordIdx + 1) % words.length; }
-  }
-  setTimeout(typeWriter, deleting ? 60 : 110);
-}
-setTimeout(typeWriter, 2000);
-
-/* â”€â”€ Navbar hide/show â”€â”€ */
-const navbar = document.getElementById('navbar');
-let lastScrollY = 0;
-window.addEventListener('scroll', () => {
-  const y = window.scrollY;
-  if (y > lastScrollY && y > 80) navbar.classList.add('hidden');
-  else navbar.classList.remove('hidden');
-  lastScrollY = y;
-  highlightNav();
-});
-
-function highlightNav() {
-  document.querySelectorAll('section[id]').forEach(sec => {
-    const rect = sec.getBoundingClientRect();
-    const link = document.querySelector(`.nav-links a[href="#${sec.id}"]`);
-    if (!link) return;
-    if (rect.top <= 100 && rect.bottom >= 100) link.classList.add('active');
-    else link.classList.remove('active');
+navLinks.querySelectorAll('a').forEach(link => {
+  link.addEventListener('click', () => {
+    navLinks.classList.remove('is-open');
+    navToggle.setAttribute('aria-expanded', 'false');
   });
-}
+});
 
-/* â”€â”€ Intersection Observer â”€â”€ */
-function isInViewport(el) {
-  return el.getBoundingClientRect().top < window.innerHeight - 80;
-}
-const observer = new IntersectionObserver(entries => {
-  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
-}, { threshold: 0.1 });
-document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+// Shrink nav background slightly on scroll (kept subtle, CSS already handles blur)
+const nav = document.getElementById('nav');
+window.addEventListener('scroll', () => {
+  if (window.scrollY > 8) {
+    nav.style.borderBottomColor = 'var(--border)';
+  } else {
+    nav.style.borderBottomColor = 'var(--border-soft)';
+  }
+});
 
-/* â”€â”€ Mobile Menu â”€â”€ */
-function toggleMenu() {
-  document.getElementById('mobile-menu').classList.toggle('open');
-}
+// Reveal-on-scroll for elements marked .reveal
+const revealEls = document.querySelectorAll('.reveal');
 
-/* â”€â”€ Contact Form â”€â”€ */
-function handleFormSubmit(e) {
-  e.preventDefault();
-  const btn = document.getElementById('submit-btn');
-  btn.textContent = 'Sending”¦';
-  btn.disabled = true;
-  setTimeout(() => {
-    btn.textContent = 'âœ“ Message Sent!';
-    btn.style.background = 'linear-gradient(135deg,var(--emerald),#00cc7a)';
-    document.getElementById('contact-form').reset();
-    setTimeout(() => {
-      btn.textContent = 'Send Message âœˆ';
-      btn.style.background = '';
-      btn.disabled = false;
-    }, 3000);
-  }, 1200);
+if ('IntersectionObserver' in window) {
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry, i) => {
+      if (entry.isIntersecting) {
+        setTimeout(() => entry.target.classList.add('is-visible'), i * 60);
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
+
+  revealEls.forEach(el => observer.observe(el));
+} else {
+  revealEls.forEach(el => el.classList.add('is-visible'));
 }
 </script>
-
 </body>
 </html>
