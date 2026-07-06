@@ -8,7 +8,7 @@
   <link rel="stylesheet" href="styles.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Sora:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Inter:wght@300;400;500;600;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet" />
 </head>
 <body>
 
@@ -23,7 +23,7 @@
 <!-- ══════════════════════════════
      PARTICLE CANVAS
 ══════════════════════════════ -->
-<canvas id="particle-canvas"></canvas>
+<div class="bg-mesh"></div>
 
 <!-- ══════════════════════════════
      NAVBAR
@@ -149,11 +149,11 @@
 
         <div class="quick-facts fade-in fade-in-delay-3">
           <div class="fact-card">
-            <span class="fact-icon">ðŸ“</span>
+            <span class="fact-icon">📍</span>
             <div class="fact-text"><strong>Location</strong>Guntur, AP</div>
           </div>
           <div class="fact-card">
-            <span class="fact-icon">ðŸŽ“</span>
+            <span class="fact-icon">🎓</span>
             <div class="fact-text"><strong>Degree</strong>B.Tech CSE, 2023–2027</div>
           </div>
           <div class="fact-card">
@@ -161,7 +161,7 @@
             <div class="fact-text"><strong>CGPA</strong>9.64 / 10</div>
           </div>
           <div class="fact-card">
-            <span class="fact-icon">ðŸ¤–</span>
+            <span class="fact-icon">🤖</span>
             <div class="fact-text"><strong>Focus</strong>Full Stack + ML</div>
           </div>
         </div>
@@ -176,10 +176,7 @@
           <div class="stat-number">5+</div>
           <div class="stat-label">Projects Built</div>
         </div>
-        <div class="stat-card">
-          <div class="stat-number">2</div>
-          <div class="stat-label">AWS Certifications</div>
-        </div>
+        
         <div class="stat-card">
           <div class="stat-number">âˆž</div>
           <div class="stat-label">Passion for Code</div>
@@ -427,7 +424,7 @@
           <div class="exp-header">
             <div>
               <div class="exp-company">SkillCraft Technology</div>
-              <div class="exp-meta">ðŸ“ Remote &nbsp;|&nbsp; ðŸ—“ June 2025</div>
+              <div class="exp-meta">📍 Remote &nbsp;|&nbsp; 🗓 June 2025</div>
             </div>
             <span class="exp-role">Web Dev Intern</span>
           </div>
@@ -442,33 +439,6 @@
   </div>
 </section>
 
-<!-- ══════════════════════════════
-     CERTIFICATIONS
-══════════════════════════════ -->
-<section id="certifications">
-  <div class="container">
-    <p class="section-tag fade-in">06 / Certifications</p>
-    <h2 class="section-title fade-in fade-in-delay-1">Cloud <span class="gradient-text">Credentials</span></h2>
-
-    <div class="certs-grid">
-      <div class="cert-card fade-in fade-in-delay-1">
-        <div class="cert-badge">â˜ï¸</div>
-        <div class="cert-provider">Amazon Web Services</div>
-        <div class="cert-name">AWS Certified Cloud Practitioner</div>
-        <a href="#" class="btn-cert">View Certificate â†—</a>
-      </div>
-      <div class="cert-card fade-in fade-in-delay-2">
-        <div class="cert-badge">ðŸ—ï¸</div>
-        <div class="cert-provider">Amazon Web Services</div>
-        <div class="cert-name">AWS Certified Solutions Architect — Associate</div>
-        <a href="#" class="btn-cert">View Certificate â†—</a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ══════════════════════════════
-     EDUCATION
 ══════════════════════════════ -->
 <section id="education">
   <div class="container">
@@ -634,43 +604,7 @@ window.addEventListener('load', () => {
   }, 1600);
 });
 
-/* â”€â”€ Particle Canvas â”€â”€ */
-const canvas = document.getElementById('particle-canvas');
-const ctx    = canvas.getContext('2d');
 
-function resizeCanvas() {
-  canvas.width  = window.innerWidth;
-  canvas.height = window.innerHeight;
-}
-resizeCanvas();
-window.addEventListener('resize', resizeCanvas);
-
-const particles = [];
-for (let i = 0; i < 120; i++) {
-  particles.push({
-    x: Math.random() * window.innerWidth,
-    y: Math.random() * window.innerHeight,
-    r: Math.random() * 1.5 + 0.3,
-    dx: (Math.random() - 0.5) * 0.3,
-    dy: (Math.random() - 0.5) * 0.3,
-    o: Math.random() * 0.6 + 0.2,
-  });
-}
-
-function drawParticles() {
-  ctx.clearRect(0, 0, canvas.width, canvas.height);
-  particles.forEach(p => {
-    ctx.beginPath();
-    ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
-    ctx.fillStyle = `rgba(0,229,255,${p.o})`;
-    ctx.fill();
-    p.x += p.dx; p.y += p.dy;
-    if (p.x < 0 || p.x > canvas.width)  p.dx *= -1;
-    if (p.y < 0 || p.y > canvas.height) p.dy *= -1;
-  });
-  requestAnimationFrame(drawParticles);
-}
-drawParticles();
 
 /* â”€â”€ Typewriter — updated to include ML â”€â”€ */
 const words  = ['Full-Stack Developer', 'AI/ML Engineer', 'MERN Stack Developer', 'Problem Solver'];
