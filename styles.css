@@ -430,6 +430,74 @@ section{ padding: 96px 0; }
 }
 
 /* ============================================
+   CERTIFICATIONS
+=============================================== */
+.cert-list{
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.cert-card{
+  display: grid;
+  grid-template-columns: 108px 1fr;
+  gap: 32px;
+  align-items: center;
+  padding: 28px;
+  border: 1px solid var(--border-soft);
+  border-radius: 12px;
+  background: var(--surface);
+  transition: border-color 0.2s ease, transform 0.2s ease, background 0.2s ease;
+}
+.cert-card:hover{
+  border-color: var(--accent-dim);
+  transform: translateY(-2px);
+  background: var(--surface-2);
+}
+.cert-badge{
+  width: 108px;
+  height: 108px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.cert-badge img{
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+.cert-info h3{
+  font-size: 20px;
+  margin: 8px 0 4px;
+}
+.cert-issuer{
+  color: var(--text-muted);
+  font-size: 14px;
+  margin-bottom: 12px;
+}
+.cert-desc{
+  color: var(--text-muted);
+  font-size: 15px;
+  margin-bottom: 16px;
+  max-width: 620px;
+}
+.cert-link{
+  font-family: var(--font-mono);
+  font-size: 13px;
+  color: var(--accent);
+  font-weight: 500;
+}
+.cert-card:hover .cert-link{ color: var(--accent-dim); }
+
+@media (max-width: 640px){
+  .cert-card{
+    grid-template-columns: 1fr;
+    text-align: left;
+    gap: 20px;
+  }
+  .cert-badge{ width: 72px; height: 72px; }
+}
+
+/* ============================================
    EXPERIENCE / EDUCATION
 =============================================== */
 .exp-grid{
